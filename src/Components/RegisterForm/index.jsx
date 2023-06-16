@@ -77,15 +77,6 @@ function RegisterForm() {
       <Select
         label="Selecionar módulo"
         {...register("course_module")}
-        options={[
-          { value: "", label: "Selecione o Módulo" },
-          { value: "Primeiro Módulo", label: "Primeiro Módulo" },
-          { value: "Segundo Módulo", label: "Segundo Módulo" },
-          { value: "Terceiro Módulo", label: "Terceiro Módulo" },
-          { value: "Quarto Módulo", label: "Quarto Módulo" },
-          { value: "Quinto Módulo", label: "Quinto Módulo" },
-          { value: "Sexto Módulo", label: "Sexto Módulo" },
-        ]}
         error={errors?.course_module}
       />
 

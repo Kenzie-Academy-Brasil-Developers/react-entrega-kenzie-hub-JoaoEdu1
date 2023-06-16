@@ -9,11 +9,13 @@ const Select = forwardRef(({ label, error, options, ...rest }, ref) => {
         {label}
       </StyledLabel>
       <StyledSelect ref={ref} {...rest} error={error ? true : false}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
+        <option value="" label="Selecione o Módulo" />
+        <option value="Primeiro Módulo" label="Primeiro Módulo" />
+        <option value="Segundo Módulo" label="Segundo Módulo" />
+        <option value="Terceiro Módulo" label="Terceiro Módulo" />
+        <option value="Quarto Módulo" label="Quarto Módulo" />
+        <option value="Quinto Módulo" label="Quinto Módulo" />
+        <option value="Sexto Módulo" label="Sexto Módulo" />
       </StyledSelect>
       {error ? (
         <StyledParagraphError fontColor="var(--ColorNegative)">
