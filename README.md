@@ -7,3 +7,7 @@ _Figma_
 _API_
 
 - https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api
+
+- *Site*
+
+- https://react-entrega-kenzie-hub-joao-edu1.vercel.app/
