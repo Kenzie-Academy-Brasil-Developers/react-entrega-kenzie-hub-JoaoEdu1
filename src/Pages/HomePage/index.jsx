@@ -7,9 +7,13 @@ import {
   StyledTitleTwo,
 } from "../../Styles/typography";
 import { StyledDiv, StyledDivUser } from "./style";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
-function HomePage({ user }) {
+function HomePage() {
   const [userData, setUserData] = useState(null);
+
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {

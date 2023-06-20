@@ -7,8 +7,10 @@ import { StyledButton } from "../../Styles/buttons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addLoginSchema } from "./addLoginSchema";
 import Input from "../Input";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
-function LoginForm({ setUser }) {
+function LoginForm() {
   const {
     register,
     handleSubmit,
@@ -19,23 +21,10 @@ function LoginForm({ setUser }) {
     resolver: zodResolver(addLoginSchema),
   });
 
-  const navigate = useNavigate();
-
-  async function createUser(formData) {
-    try {
-      const { data } = await api.post("/sessions", formData);
-      localStorage.setItem("@TOKEN", data.token);
-      localStorage.setItem("@USERID", data.user.id);
-
-      setUser(data.user);
-      navigate("/home");
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const { userLogin } = useContext(UserContext);
 
   async function submit(formData) {
-    await createUser(formData);
+    await userLogin(formData);
     reset();
   }
   return (

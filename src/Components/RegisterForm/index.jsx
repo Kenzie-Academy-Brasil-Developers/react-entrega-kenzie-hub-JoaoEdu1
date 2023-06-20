@@ -12,6 +12,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { addRegisterSchema } from "./addRegisterSchema";
 import Input from "../Input";
 import Select from "../Select";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 function RegisterForm() {
   const {
@@ -24,16 +26,10 @@ function RegisterForm() {
     resolver: zodResolver(addRegisterSchema),
   });
 
-  async function createUser(formData) {
-    try {
-      await api.post("/users", formData);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  const { userRegister } = useContext(UserContext);
 
   async function submit(formData) {
-    await createUser(formData);
+    await userRegister(formData);
     reset();
   }
 

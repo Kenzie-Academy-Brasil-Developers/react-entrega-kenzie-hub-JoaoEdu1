@@ -1,13 +1,16 @@
 import RoutesMain from "./Routes/RoutesMain";
 import { GlobalStyle } from "./Styles/Global";
 import { ResetStyle } from "./Styles/Reset";
+import { UserProvider } from "./providers/UserContext";
 
 function App() {
   return (
-    <>  
-      <GlobalStyle />
-      <ResetStyle />
-      <RoutesMain />
+    <>
+      <UserProvider>
+        <GlobalStyle />
+        <ResetStyle />
+        <RoutesMain />
+      </UserProvider>
     </>
   );
 }
