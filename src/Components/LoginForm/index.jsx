@@ -24,7 +24,8 @@ function LoginForm({ setUser }) {
   async function createUser(formData) {
     try {
       const { data } = await api.post("/sessions", formData);
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("@TOKEN", data.token);
+      localStorage.setItem("@USERID", data.user.id);
 
       setUser(data.user);
       navigate("/home");

@@ -5,7 +5,7 @@ import RegisterForm from "../../Components/RegisterForm";
 function RegisterPage() {
   return (
     <>
-      <Header />
+      <Header maxWidth="small" />
       <StyledMain>
         <div>
           <RegisterForm />

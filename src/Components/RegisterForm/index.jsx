@@ -63,8 +63,8 @@ function RegisterForm() {
       <Input
         label="Confirmar Senha"
         type="password"
-        {...register("confirmPassword")}
-        error={errors?.confirmPassword}
+        {...register("confirm")}
+        error={errors.confirm}
       />
       <Input label="Bio" type="text" {...register("bio")} error={errors?.bio} />
       <Input

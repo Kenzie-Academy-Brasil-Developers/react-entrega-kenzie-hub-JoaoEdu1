@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -8,6 +8,14 @@ export const StyledHeader = styled.header`
   > div {
     display: flex;
     justify-content: space-between;
-    width: clamp(16.875rem, 50%, 20.3125rem);
+    width: clamp(16.875rem, 80%, 61.875rem);
+    ${({ maxWidth }) => {
+      switch (maxWidth) {
+        case "small":
+          return css`
+            max-width: 21.875rem;
+          `;
+      }
+    }}
   }
 `;

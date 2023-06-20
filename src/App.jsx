@@ -4,7 +4,7 @@ import { ResetStyle } from "./Styles/Reset";
 
 function App() {
   return (
-    <>
+    <>  
       <GlobalStyle />
       <ResetStyle />
       <RoutesMain />

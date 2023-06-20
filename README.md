@@ -8,6 +8,6 @@ _API_
 
 - https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api
 
-- *Site*
+_Site_
 
 - https://react-entrega-kenzie-hub-joao-edu1.vercel.app/
