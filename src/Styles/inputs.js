@@ -32,4 +32,5 @@ export const StyledInput = styled.input`
 export const StyledSelect = styled.select`
   ${styledInputs}
   width: 15.375rem;
+  cursor: pointer;
 `;

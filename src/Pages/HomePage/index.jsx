@@ -1,54 +1,29 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Header from "../../Components/Header";
 import {
   StyledParagraph,
   StyledTitleOne,
   StyledTitleTwo,
 } from "../../Styles/typography";
-import { StyledDiv, StyledDivUser } from "./style";
+import { StyledDivUser } from "./style";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
+import { MainContent } from "../../Components/MainContentHomePage";
 
-function HomePage({ user }) {
-  const [userData, setUserData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get("https://kenziehub.me/api/profile", {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
-        setUserData({ data });
-      } catch (error) {
-        console.error("Falha na solicitação:", error);
-      }
-    };
-
-    fetchData();
-  }, [user]);
+function HomePage() {
+  const { user } = useContext(UserContext);
 
   return (
     <>
       <Header />
       <main>
         <StyledDivUser>
-          <StyledTitleOne>Olá, {user.name}</StyledTitleOne>
+          <StyledTitleOne>Olá, {user?.name}</StyledTitleOne>
           <StyledParagraph fontStyle="italic">
-            {user.course_module}
+            {user?.course_module}
           </StyledParagraph>
         </StyledDivUser>
-        <StyledDiv>
-          <div>
-            <StyledTitleOne>
-              Que pena! Estamos em desenvolvimento :(
-            </StyledTitleOne>
-            <StyledTitleTwo fontSize="h2" color="white">
-              Nossa aplicação está em desenvolvimento, em breve teremos
-              novidades
-            </StyledTitleTwo>
-          </div>
-        </StyledDiv>
+
+        <MainContent />
       </main>
     </>
   );
